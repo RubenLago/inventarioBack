@@ -1,11 +1,45 @@
-const { getAll } = require('../../models/producto.models');
+const { getAll, getById, deleteById, createProducto, updateProducto } = require('../../models/producto.models');
 
 const router = require('express').Router();
 
+//ver todos los productos
 router.get('/', async (req, res) => {
     const productos = await getAll();
 
     res.json(productos)
 })
+
+//ver un producto id
+router.get('/:id', async (req, res) => {
+    const producto = await getById(req.params.id);
+    res.json(producto)
+})
+
+//borrar un producto
+router.delete('/:id', async (req, res) => {
+    const borrarProducto = await deleteById(req.params.id)
+    res.json(borrarProducto)
+
+})
+
+//crear producto
+router.post('/create', async (req, res) => {
+    const nuevoProducto = await createProducto(req.body)
+    res.json(nuevoProducto)
+})
+
+//actualizar db
+router.put('/', async (req, res) => {
+    const dbActual = await updateProducto(req.body)
+    res.json(dbActual)
+})
+
+
+
+
+
+
+
+
 
 module.exports = router;
