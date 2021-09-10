@@ -32,6 +32,7 @@ const createProducto = ({ nombre, formato, cantidad, precioSin, iva, precioCon }
   precioCon='' 
 WHERE id=8 */
 //con templateliteral para actualizar
+
 const updateProducto = ({ id, nombre, formato, cantidad, precioSin, iva, precioCon, fk_restaurante_id, fk_categoria_id }) => {
     return executeQuery(`UPDATE productos SET nombre="${nombre}",formato="${formato}", cantidad="${cantidad}", precioSin="${precioSin}", iva="${iva}", precioCon="${precioCon}", fk_restaurante_id=${fk_restaurante_id}, fk_categoria_id=${fk_categoria_id} WHERE id=${id}`)
 }

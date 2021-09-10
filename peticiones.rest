@@ -37,3 +37,32 @@ Content-Type: application/json
     "fk_restaurante_id": null,
     "fk_categoria_id":null
 }
+
+###
+
+GET http://localhost:3000/categorias
+
+###
+
+POST  http://localhost:3000/categorias/create
+Content-Type: application/json
+
+{
+ "nombre": "Infusiones"
+}
+###
+
+DELETE  http://localhost:3000/categorias/3
+
+###
+
+GET http://localhost:3000/categorias/2
+
+###
+
+PUT http://localhost:3000/categorias/2
+Content-Type: application/json
+
+{
+    "nombre": "Enoteca"
+}
