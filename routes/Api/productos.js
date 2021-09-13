@@ -28,11 +28,14 @@ router.post('/create', async (req, res) => {
     res.json(nuevoProducto)
 })
 
-//actualizar db
+//editar producto
 router.put('/', async (req, res) => {
+    console.log(req.body);
     const dbActual = await updateProducto(req.body)
     res.json(dbActual)
 })
+
+
 
 
 

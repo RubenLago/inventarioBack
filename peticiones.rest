@@ -22,13 +22,13 @@ Content-Type: application/json
     "fk_categoria":""
 }
 
-### actualizar db
-PUT http://localhost:3000/productos
+### editar db
+PUT http://localhost:3000/productos/
 Content-Type: application/json
 
 {
     "id": 8,
-    "nombre": "PERRa Chica",
+    "nombre": "PERRa puta",
     "formato": "CAJA 24U",
     "cantidad": "",
     "precioSin": "",
