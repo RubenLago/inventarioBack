@@ -24,6 +24,7 @@ router.delete('/:id', async (req, res) => {
 
 //crear producto
 router.post('/create', async (req, res) => {
+    console.log(req.body)
     const nuevoProducto = await createProducto(req.body)
     res.json(nuevoProducto)
 })
