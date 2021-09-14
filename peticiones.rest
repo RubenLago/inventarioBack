@@ -1,4 +1,18 @@
+### usuarios
 
+### crear usuario
+POST  http://localhost:3000/usuarios/registro
+Content-Type: application/json
+
+{
+    "nombre": "Rubén",
+    "email" : "rubenlagoart@gmail.com",
+    "password":  "Rubén",
+    "telefono": "612312312"
+}
+
+
+### productos
 
 GET http://localhost:3000/productos
 
