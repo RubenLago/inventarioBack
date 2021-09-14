@@ -11,6 +11,10 @@ Content-Type: application/json
     "telefono": "612312312"
 }
 
+### borrar usuario
+DELETE http://localhost:3000/usuarios/borrar/7
+
+
 
 ### productos
 

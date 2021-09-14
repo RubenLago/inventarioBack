@@ -10,8 +10,9 @@ require('./dbconfig')
 
 const indexRouter = require('./routes/index');
 const productosRouter = require('./routes/api/productos');
-const categoriaRouter = require('./routes/api/categorias')
-const usuariosRouter = require('./routes/api/usuarios')
+const categoriaRouter = require('./routes/api/categorias');
+const usuariosRouter = require('./routes/api/usuarios');
+
 
 const app = express();
 
