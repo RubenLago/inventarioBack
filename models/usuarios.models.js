@@ -6,7 +6,7 @@ const crearUsuario = ({ nombre, email, password, telefono }) => {
 }
 
 const borrarUsuarioId = (idUsuario) => {
-    return executeQueryUnique('SELECT * FROM usuarios where id=?', [idUsuario])
+    return executeQueryUnique('DELETE FROM usuarios where id=?', [idUsuario])
 }
 
 
