@@ -9,5 +9,10 @@ const borrarUsuarioId = (idUsuario) => {
     return executeQueryUnique('DELETE FROM usuarios where id=?', [idUsuario])
 }
 
+//login
+const getByEmail = (email) => {
+    return executeQueryUnique('select * from usuarios where email = ?', [email])
+}
 
-module.exports = { crearUsuario, borrarUsuarioId }
+
+module.exports = { crearUsuario, borrarUsuarioId, getByEmail }

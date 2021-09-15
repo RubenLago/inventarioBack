@@ -15,9 +15,11 @@ const executeQueryUnique = (sql, arrValues = []) => {
         db.query(
             sql, arrValues, (err, result) => {
                 if (err) reject(err);
-                if (!result.length) {
-                    resolve(result)
-                } else { resolve(result[0]) }
+                if (result.length !== 1) {
+                    resolve(null)
+                } else {
+                    resolve(result[0])
+                }
             }
         )
     })
