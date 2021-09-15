@@ -51,7 +51,7 @@ function createToken(usuario) {
     const obj = {
         usuarioEmail: usuario.email,
         createdAt: dayjs().unix(),
-        expiredAt: dayjs().add(5, 'minutes').unix()
+        expiredAt: dayjs().add(200, 'minutes').unix()
     }
     console.log(obj);
     return jwt.sign(obj, process.env.SECRET_KEY);
