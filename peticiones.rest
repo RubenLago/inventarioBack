@@ -9,7 +9,7 @@ Content-Type: application/json
     "apellidos": "Fernan",
     "username": "ruben",
     "email" : "rubenlagoart@gmail.com",
-    "password":  "Rubén",
+    "password":  "rubenL.3",
     "telefono": "612312312"
 }
 
