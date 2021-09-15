@@ -21,7 +21,7 @@ const checkToken = async (req, res, next) => {
         return res.json({ error: 'Finalizado tiempo de la sesión -dayjs-' })
     }
 
-    const usuario = await getByEmail(obj.email)
+    const usuario = await getByEmail(obj.usuarioEmail)
     req.user = usuario;
     next()
 }

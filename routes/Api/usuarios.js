@@ -1,8 +1,9 @@
-const { crearUsuario, borrarUsuarioId, getByEmail } = require('../../models/usuarios.models');
+const { crearUsuario, borrarUsuarioId, getByEmail, getNegociosUsuario } = require('../../models/usuarios.models');
 const bcrypt = require('bcryptjs');
 const router = require('express').Router();
 const jwt = require('jsonwebtoken');
 const dayjs = require('dayjs');
+const { checkToken } = require('../middelwares');
 
 
 //resgistrar nuevo usario
@@ -21,6 +22,13 @@ router.delete('/borrar/:idUsuario', async (req, res) => {
     const borrar = await borrarUsuarioId(req.params.idUsuario)
     res.json(borrar)
 
+})
+
+//obtener negocios de un usuario
+router.get('/negocios', checkToken, async (req, res) => {
+    console.log(req.user)
+    const negocios = await getNegociosUsuario(req.user.id)
+    res.json(negocios)
 })
 
 //login

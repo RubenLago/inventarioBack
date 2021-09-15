@@ -4,12 +4,17 @@ POST http://localhost:3000/usuarios/login
 Content-Type: application/json 
 
 {
-    "email": "rubenla@gmail.com",
-    "password": "rubenA122"
+    "email": "mario@gmail.com",
+    "password": "12345"
 }
 
 
 ### usuarios
+
+### negocios de un usuario
+GET http://localhost:3000/usuarios/negocios
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvRW1haWwiOiJtYXJpb0BnbWFpbC5jb20iLCJjcmVhdGVkQXQiOjE2MzE3MTIyMDQsImV4cGlyZWRBdCI6MTYzMTcyNDIwNCwiaWF0IjoxNjMxNzEyMjA0fQ.ypVaqpbt5OS5JV7LYR09ACj-itwFFUnWzJCagaFI8IQ
+
 
 ### crear usuario
 POST  http://localhost:3000/usuarios/registro
