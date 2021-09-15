@@ -1,8 +1,8 @@
 
 const { executeQuery, executeQueryUnique } = require("./helpers")
 
-const crearUsuario = ({ nombre, email, password, telefono }) => {
-    return executeQuery('INSERT INTO usuarios (nombre, email, password, telefono) VALUES (?,?,?,?)', [nombre, email, password, telefono])
+const crearUsuario = ({ nombre, apellidos, username, email, password, telefono }) => {
+    return executeQuery('INSERT INTO usuarios (nombre,apellidos,username, email, password, telefono) VALUES (?,?,?,?,?,?)', [nombre, apellidos, username, email, password, telefono])
 }
 
 const borrarUsuarioId = (idUsuario) => {
