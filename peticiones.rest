@@ -49,13 +49,12 @@ POST http://localhost:3000/productos/create
 Content-Type: application/json
 
 {
-    "nombre": "Cafe Candelas",
+    "nombre": "Cafe",
     "formato": "CAJA 24U",
     "cantidad": "",
     "precioSin": "",
     "iva": "",
-    "precioCon": "",
-    "fk_restaurante": "",
+    "fk_negocio_id": 1,
     "fk_categoria":""
 }
 

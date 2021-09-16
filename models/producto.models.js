@@ -17,9 +17,10 @@ const deleteById = (productoId) => {
 }
 
 //crear producto nuevo
-const createProducto = ({ nombre, formato, cantidad, precioSin, iva, precioCon }) => {
-    return executeQuery('INSERT INTO productos (nombre,formato,cantidad, precioSin, iva, precioCon) VALUES (?,?,?,?,?,?)', [nombre, formato, cantidad, precioSin, iva, precioCon])
+const createProducto = ({ nombre, formato, cantidad, precioSin, iva, fk_negocio_id }) => {
+    return executeQuery('INSERT INTO productos (nombre,formato,cantidad, precioSin, iva,fk_negocio_id) VALUES (?,?,?,?,?,?)', [nombre, formato, cantidad, precioSin, iva, fk_negocio_id])
 }
+
 
 //crear producto nuevo
 /* query >>>
