@@ -21,4 +21,5 @@ const getNegociosUsuario = (idUsuario) => {
 }
 
 
+
 module.exports = { crearUsuario, borrarUsuarioId, getByEmail, getNegociosUsuario }

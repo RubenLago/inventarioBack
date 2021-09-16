@@ -1,4 +1,4 @@
-const { getAll, getById, deleteById, createProducto, updateProducto } = require('../../models/producto.models');
+const { getAll, getById, deleteById, createProducto, updateProducto, getByNegocio } = require('../../models/producto.models');
 
 const router = require('express').Router();
 
@@ -36,8 +36,11 @@ router.put('/', async (req, res) => {
     res.json(dbActual)
 })
 
-
-
+//recuperar productos negocio
+router.get('/negocios/:id', async (req, res) => {
+    const pNegocios = await getByNegocio(req.params.id);
+    res.json(pNegocios)
+})
 
 
 

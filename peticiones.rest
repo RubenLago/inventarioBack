@@ -103,3 +103,7 @@ Content-Type: application/json
 {
     "nombre": "Enoteca"
 }
+
+###
+
+GET http://localhost:3000/productos/negocios/4

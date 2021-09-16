@@ -35,4 +35,9 @@ WHERE id=8 */
 const updateProducto = ({ id, nombre, formato, cantidad, precioSin, iva }) => {
     return executeQuery(`UPDATE productos SET nombre="${nombre}",formato="${formato}", cantidad="${cantidad}", precioSin="${precioSin}", iva="${iva}", precioCon="${(((iva) / 100) + 1) * precioSin}" WHERE id=${id}`)
 }
-module.exports = { getAll, getById, createProducto, deleteById, updateProducto }
+
+const getByNegocio = (negocioId) => {
+    return executeQuery('SELECT * FROM productos where fk_negocio_id = ?', [negocioId])
+}
+
+module.exports = { getAll, getById, createProducto, deleteById, updateProducto, getByNegocio }
