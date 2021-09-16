@@ -1,4 +1,4 @@
-const { executeQuery, executeQueryUnique } = require("./helpers")
+const { executeQuery } = require("./helpers")
 
 const createNegocio = ({ nombre, calle, numero, cp, cif }) => {
     return executeQuery('INSERT INTO negocios (nombre, calle, numero, cp, cif) VALUES (?,?,?,?,?)', [nombre, calle, numero, cp, cif])

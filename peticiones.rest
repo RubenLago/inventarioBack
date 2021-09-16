@@ -109,7 +109,7 @@ GET http://localhost:3000/productos/negocios/4
 
 ### crear negocio
 POST  http://localhost:3000/negocios/create
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvRW1haWwiOiJtYXJpb0BnbWFpbC5jb20iLCJjcmVhdGVkQXQiOjE2MzE3ODkwNzIsImV4cGlyZWRBdCI6MTYzMTgwMTA3MiwiaWF0IjoxNjMxNzg5MDcyfQ.zlKmhMmue-mIFJMoZUVBISh_uVnCwh6G11HSocm6tV0
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvRW1haWwiOiJtYXJpb0BnbWFpbC5jb20iLCJjcmVhdGVkQXQiOjE2MzE4MDE5NDUsImV4cGlyZWRBdCI6MTYzMTgxMzk0NSwiaWF0IjoxNjMxODAxOTQ1fQ.Vla1c9q9VZc_NfMmNLZcNdOx0lYVJnyA4HqYLFXOrZE
 Content-Type: application/json
 
 {
