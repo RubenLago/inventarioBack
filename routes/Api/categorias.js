@@ -14,7 +14,6 @@ router.get('/:categoriaId', async (req, res) => {
 
 router.post('/create', async (req, res) => {
     const categoriaCreada = await create(req.body);
-    console.log(categoriaCreada)
     res.json(categoriaCreada)
 })
 

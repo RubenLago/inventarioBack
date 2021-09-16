@@ -13,7 +13,7 @@ Content-Type: application/json
 
 ### negocios de un usuario
 GET http://localhost:3000/usuarios/negocios
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvRW1haWwiOiJtYXJpb0BnbWFpbC5jb20iLCJjcmVhdGVkQXQiOjE2MzE3MTIyMDQsImV4cGlyZWRBdCI6MTYzMTcyNDIwNCwiaWF0IjoxNjMxNzEyMjA0fQ.ypVaqpbt5OS5JV7LYR09ACj-itwFFUnWzJCagaFI8IQ
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvRW1haWwiOiJtYXJpb0BnbWFpbC5jb20iLCJjcmVhdGVkQXQiOjE2MzE3ODkwNzIsImV4cGlyZWRBdCI6MTYzMTgwMTA3MiwiaWF0IjoxNjMxNzg5MDcyfQ.zlKmhMmue-mIFJMoZUVBISh_uVnCwh6G11HSocm6tV0
 
 
 ### crear usuario
@@ -106,3 +106,16 @@ Content-Type: application/json
 ###
 
 GET http://localhost:3000/productos/negocios/4
+
+### crear negocio
+POST  http://localhost:3000/negocios/create
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvRW1haWwiOiJtYXJpb0BnbWFpbC5jb20iLCJjcmVhdGVkQXQiOjE2MzE3ODkwNzIsImV4cGlyZWRBdCI6MTYzMTgwMTA3MiwiaWF0IjoxNjMxNzg5MDcyfQ.zlKmhMmue-mIFJMoZUVBISh_uVnCwh6G11HSocm6tV0
+Content-Type: application/json
+
+{
+"nombre": "Palomitas 1",
+"calle": "Vallehermoso",
+"numero": "50",
+"cp" : "28015",
+"cif":  "77247230M"
+}
