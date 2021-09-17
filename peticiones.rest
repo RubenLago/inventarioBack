@@ -121,3 +121,7 @@ Content-Type: application/json
 {
 "nombre": "Enoteca"
 }
+
+### filtrar productos caracteres
+GET http://localhost:3000/productos/negocios/2/cafe
+
