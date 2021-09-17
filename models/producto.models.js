@@ -41,4 +41,11 @@ const getByNegocio = (negocioId) => {
     return executeQuery('SELECT * FROM productos where fk_negocio_id = ?', [negocioId])
 }
 
-module.exports = { getAll, getById, createProducto, deleteById, updateProducto, getByNegocio }
+//filtrar productos por caracteres-nombre
+const getByCharac = (negocioId, filtroTexto) => {
+    return executeQuery('SELECT * FROM productos WHERE fk_negocio_id =? AND nombre like ?', [negocioId, `%${filtroTexto}%`])
+    //filtrado '%palo%'
+}
+
+
+module.exports = { getAll, getById, createProducto, deleteById, updateProducto, getByNegocio, getByCharac }

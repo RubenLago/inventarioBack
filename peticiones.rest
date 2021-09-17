@@ -119,3 +119,7 @@ Content-Type: application/json
 "cp" : "28015",
 "cif":  "77247230M"
 }
+
+### filtrar productos caracteres
+GET http://localhost:3000/productos/negocios/2/cafe
+
