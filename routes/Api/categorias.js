@@ -1,4 +1,4 @@
-const { getAll, create, deleteById, getById, updateCategoria } = require('../../models/categorias.models');
+const { getAll, createCategoria, deleteById, getById, updateCategoria } = require('../../models/categorias.models');
 
 const router = require('express').Router();
 
@@ -13,7 +13,7 @@ router.get('/:categoriaId', async (req, res) => {
 })
 
 router.post('/create', async (req, res) => {
-    const categoriaCreada = await create(req.body);
+    const categoriaCreada = await createCategoria(req.body);
     res.json(categoriaCreada)
 })
 

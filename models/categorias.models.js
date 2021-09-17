@@ -8,12 +8,12 @@ const getById = (categoriaId) => {
     return executeQueryUnique('select * from categorias where id = ? ', [categoriaId])
 }
 
-const create = ({ nombre }) => {
-    return executeQueryUnique('INSERT INTO categorias (nombre) values (?)', [nombre])
+const createCategoria = ({ nombre, color }) => {
+    return executeQuery('INSERT INTO categorias (nombre, color) values (?,?)', [nombre, color])
 }
 
 const deleteById = (categoriaId) => {
-    return executeQueryUnique('delete from categorias where id = ? ', [categoriaId])
+    return executeQuery('delete from categorias where id = ? ', [categoriaId])
 }
 
 const updateCategoria = ({ id, nombre, color }) => {
@@ -22,4 +22,4 @@ const updateCategoria = ({ id, nombre, color }) => {
 
 
 
-module.exports = { getAll, create, deleteById, getById, updateCategoria }
+module.exports = { getAll, createCategoria, deleteById, getById, updateCategoria }

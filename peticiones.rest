@@ -78,13 +78,32 @@ Content-Type: application/json
 
 GET http://localhost:3000/categorias
 
+
+###
+
+GET http://localhost:3000/productos/negocios/4
+
+
+### crear negocio
+POST  http://localhost:3000/negocios/create
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvRW1haWwiOiJtYXJpb0BnbWFpbC5jb20iLCJjcmVhdGVkQXQiOjE2MzE4MDE5NDUsImV4cGlyZWRBdCI6MTYzMTgxMzk0NSwiaWF0IjoxNjMxODAxOTQ1fQ.Vla1c9q9VZc_NfMmNLZcNdOx0lYVJnyA4HqYLFXOrZE
+Content-Type: application/json
+
+{
+"nombre": "Palomitas 1",
+"calle": "Vallehermoso",
+"numero": "50",
+"cp" : "28015",
+"cif":  "77247230M"
+}
+
 ###
 
 POST  http://localhost:3000/categorias/create
 Content-Type: application/json
 
 {
- "nombre": "Infusiones"
+    "nombre": "Infusiones"
 }
 ###
 
@@ -100,22 +119,5 @@ PUT http://localhost:3000/categorias/2
 Content-Type: application/json
 
 {
-    "nombre": "Enoteca"
-}
-
-###
-
-GET http://localhost:3000/productos/negocios/4
-
-### crear negocio
-POST  http://localhost:3000/negocios/create
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvRW1haWwiOiJtYXJpb0BnbWFpbC5jb20iLCJjcmVhdGVkQXQiOjE2MzE4MDE5NDUsImV4cGlyZWRBdCI6MTYzMTgxMzk0NSwiaWF0IjoxNjMxODAxOTQ1fQ.Vla1c9q9VZc_NfMmNLZcNdOx0lYVJnyA4HqYLFXOrZE
-Content-Type: application/json
-
-{
-"nombre": "Palomitas 1",
-"calle": "Vallehermoso",
-"numero": "50",
-"cp" : "28015",
-"cif":  "77247230M"
+"nombre": "Enoteca"
 }
