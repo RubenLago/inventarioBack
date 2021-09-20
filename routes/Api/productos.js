@@ -50,10 +50,4 @@ router.get('/negocios/:id/:filtro', async (req, res) => {
 })
 
 
-
-
-
-
-
-
 module.exports = router;

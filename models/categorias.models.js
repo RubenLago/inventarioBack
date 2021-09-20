@@ -20,6 +20,12 @@ const updateCategoria = ({ id, nombre, color }) => {
     return executeQuery(`UPDATE productos SET nombre="${nombre}", color="${color}" where id="${id}" ?`)
 }
 
+//filtrar categorias por caracteres-nombre
+const getByCharac = (filtroTexto) => {
+    return executeQuery('SELECT nombre FROM categorias WHERE nombre LIKE ?', [`%${filtroTexto}%`])
+    //filtrado '%vin%'
+}
 
 
-module.exports = { getAll, createCategoria, deleteById, getById, updateCategoria }
+
+module.exports = { getAll, createCategoria, deleteById, getById, updateCategoria, getByCharac }

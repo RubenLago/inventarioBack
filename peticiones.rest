@@ -125,3 +125,5 @@ Content-Type: application/json
 ### filtrar productos caracteres
 GET http://localhost:3000/productos/negocios/2/cafe
 
+### filtrar categoria por caracteres
+GET http://localhost:3000/categorias/search/vinos
