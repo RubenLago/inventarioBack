@@ -38,7 +38,7 @@ const updateProducto = ({ id, nombre, formato, cantidad, precioSin, iva }) => {
 }
 
 const getByNegocio = (negocioId) => {
-    return executeQuery('SELECT * FROM productos where fk_negocio_id = ?', [negocioId])
+    return executeQuery('SELECT prod.*, cat.nombre as nombre_categoria FROM  categorias cat ,productos prod where prod.fk_negocio_id = ? and prod.fk_categoria_id = cat.id', [negocioId])
 }
 
 //filtrar productos por caracteres-nombre
