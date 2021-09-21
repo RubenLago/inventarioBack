@@ -38,7 +38,7 @@ router.post('/login', async (req, res) => {
     const usuario = await getByEmail(req.body.email);
     console.log(usuario)
     if (!usuario) {
-        return res.json({ error: "Email incorrecto" })
+        return res.json({ error: "El email o contraseña son incorrectos o no existe el usuario." })
     }
 
     const iguales = bcrypt.compareSync(req.body.password, usuario.password);
@@ -49,7 +49,7 @@ router.post('/login', async (req, res) => {
         })
         //JWT
     } else {
-        return res.json({ error: "El email o contraseña son incorrectos" })
+        return res.json({ error: "El email o contraseña son incorrectos o no existe el usuario." })
     }
 
 
