@@ -13,7 +13,7 @@ Content-Type: application/json
 
 ### negocios de un usuario
 GET http://localhost:3000/usuarios/negocios
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvRW1haWwiOiJtYXJpb0BnbWFpbC5jb20iLCJjcmVhdGVkQXQiOjE2MzE3ODkwNzIsImV4cGlyZWRBdCI6MTYzMTgwMTA3MiwiaWF0IjoxNjMxNzg5MDcyfQ.zlKmhMmue-mIFJMoZUVBISh_uVnCwh6G11HSocm6tV0
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvRW1haWwiOiJtYXJpb0BnbWFpbC5jb20iLCJjcmVhdGVkQXQiOjE2MzIyMjI2MDcsImV4cGlyZWRBdCI6MTYzMjIzNDYwNywiaWF0IjoxNjMyMjIyNjA3fQ.-wi_FeIpRAun64TF8L7Qg_pl-Epv0M-OU16gIzcV-Eo
 
 
 ### crear usuario
@@ -99,11 +99,11 @@ Content-Type: application/json
 
 ###
 
-POST  http://localhost:3000/categorias/create
+POST  http://localhost:3000/categorias/create/21
 Content-Type: application/json
 
 {
-    "nombre": "Infusiones"
+    "nombre": "Otra cosita"
 }
 ###
 
@@ -130,3 +130,7 @@ GET http://localhost:3000/categorias/search/refrescos
 
 ### recuperar categorias por negocio id
 GET http://localhost:3000/categorias/filter/1
+
+### crear categori-negocio
+POST  http://localhost:3000/create/categoriaNegocio
+Content-Type: application/json

@@ -17,8 +17,8 @@ const deleteById = (productoId) => {
 }
 
 //crear producto nuevo
-const createProducto = ({ nombre, formato, cantidad, precioSin, iva, fk_negocio_id }) => {
-    return executeQuery('INSERT INTO productos (nombre,formato,cantidad, precioSin, iva,fk_negocio_id) VALUES (?,?,?,?,?,?)', [nombre, formato, cantidad, precioSin, iva, fk_negocio_id])
+const createProducto = ({ nombre, formato, cantidad, precioSin, iva, fk_negocio_id, fk_categoria_id }) => {
+    return executeQuery('INSERT INTO productos (nombre,formato,cantidad, precioSin, iva,fk_negocio_id, fk_categoria_id) VALUES (?,?,?,?,?,?,?)', [nombre, formato, cantidad, precioSin, iva, fk_negocio_id, fk_categoria_id])
 }
 
 
@@ -43,7 +43,7 @@ const getByNegocio = (negocioId) => {
 
 //filtrar productos por caracteres-nombre
 const getByCharac = (negocioId, filtroTexto) => {
-    return executeQuery('SELECT * FROM productos WHERE fk_negocio_id =? AND nombre like ?', [negocioId, `%${filtroTexto}%`])
+    return executeQuery('SELECT prod.*, cat.nombre as nombre_categoria FROM productos prod, categorias cat WHERE prod.fk_negocio_id = ? AND prod.nombre like ? AND prod.fk_categoria_id = cat.id', [negocioId, `%${filtroTexto}%`])
     //filtrado '%palo%'
 }
 

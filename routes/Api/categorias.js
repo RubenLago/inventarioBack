@@ -1,4 +1,4 @@
-const { getAll, createCategoria, deleteById, getById, updateCategoria, filterByCharac, getByCategoria } = require('../../models/categorias.models');
+const { getAll, createCategoria, deleteById, getById, updateCategoria, filterByCharac, getByCategoria, createCategoriaNegocio } = require('../../models/categorias.models');
 
 const router = require('express').Router();
 
@@ -19,8 +19,9 @@ router.get('/:categoriaId', async (req, res) => {
     res.json(categoriaUnica)
 })
 
-router.post('/create', async (req, res) => {
+router.post('/create/:idNegocio', async (req, res) => {
     const categoriaCreada = await createCategoria(req.body);
+    await createCategoriaNegocio(categoriaCreada.insertId, req.params.idNegocio);
     res.json(categoriaCreada)
 })
 

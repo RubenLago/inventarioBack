@@ -32,6 +32,13 @@ const filterByCharac = (filtroTexto) => {
     //filtrado '%vin%'
 }
 
+//recuperar categorias de un negocio
+const createCategoriaNegocio = (fk_negocio_id, fk_categoria_id) => {
+    return executeQuery('INSERT INTO categorias_negocios (fk_categoria_id, fk_negocio_id) VALUES(?,?)',
+        [fk_negocio_id, fk_categoria_id])
+}
 
 
-module.exports = { getAll, createCategoria, deleteById, getById, updateCategoria, filterByCharac, getByCategoria }
+
+
+module.exports = { getAll, createCategoria, deleteById, getById, updateCategoria, filterByCharac, getByCategoria, createCategoriaNegocio }
