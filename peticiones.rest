@@ -126,7 +126,7 @@ Content-Type: application/json
 GET http://localhost:3000/productos/negocios/2/cafe
 
 ### filtrar categoria por caracteres
-GET http://localhost:3000/categorias/search/vinos
+GET http://localhost:3000/categorias/search/refrescos
 
 ### recuperar categorias por negocio id
-GET http://localhost:3000/categorias/2
+GET http://localhost:3000/categorias/filter/1

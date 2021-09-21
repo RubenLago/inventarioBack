@@ -1,4 +1,4 @@
-const { getAll, createCategoria, deleteById, getById, updateCategoria, getByCharac, getByCategoria } = require('../../models/categorias.models');
+const { getAll, createCategoria, deleteById, getById, updateCategoria, filterByCharac, getByCategoria } = require('../../models/categorias.models');
 
 const router = require('express').Router();
 
@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
 //filtrar categorias por caracteres
 router.get('/search/:filtro', async (req, res) => {
     console.log(req.params)
-    const filtroProductos = await getByCharac(req.params.filtro)
+    const filtroProductos = await filterByCharac(req.params.filtro)
     res.json(filtroProductos)
 })
 

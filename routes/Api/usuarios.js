@@ -28,6 +28,7 @@ router.delete('/borrar/:idUsuario', async (req, res) => {
 router.get('/negocios', checkToken, async (req, res) => {
     console.log(req.user)
     const negocios = await getNegociosUsuario(req.user.id)
+    console.log(negocios);
     res.json(negocios)
 })
 

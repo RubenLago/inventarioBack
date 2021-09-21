@@ -9,8 +9,7 @@ const getById = (categoriaId) => {
 }
 
 const getByCategoria = (negocioId) => {
-    return executeQuery('SELECT distinct(fk_categoria_id), cat.* from productos prod, categorias cat where fk_negocio_id =? and prod.fk_categoria_id = cat.id', [negocioId]
-    )
+    return executeQuery('SELECT distinct(fk_categoria_id) as id, cat.nombre, cat.color from categorias_negocios catneg, categorias cat where catneg.fk_negocio_id = ? and catneg.fk_categoria_id = cat.id', [negocioId]);
 }
 
 
@@ -28,11 +27,11 @@ const updateCategoria = ({ id, nombre, color }) => {
 }
 
 //filtrar categorias por caracteres-nombre
-const getByCharac = (filtroTexto) => {
+const filterByCharac = (filtroTexto) => {
     return executeQuery('SELECT nombre FROM categorias WHERE nombre LIKE ?', [`%${filtroTexto}%`])
     //filtrado '%vin%'
 }
 
 
 
-module.exports = { getAll, createCategoria, deleteById, getById, updateCategoria, getByCharac, getByCategoria }
+module.exports = { getAll, createCategoria, deleteById, getById, updateCategoria, filterByCharac, getByCategoria }
