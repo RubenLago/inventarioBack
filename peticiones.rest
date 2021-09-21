@@ -127,3 +127,6 @@ GET http://localhost:3000/productos/negocios/2/cafe
 
 ### filtrar categoria por caracteres
 GET http://localhost:3000/categorias/search/vinos
+
+### recuperar categorias por negocio id
+GET http://localhost:3000/categorias/2

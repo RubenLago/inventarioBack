@@ -1,4 +1,4 @@
-const { getAll, createCategoria, deleteById, getById, updateCategoria, getByCharac } = require('../../models/categorias.models');
+const { getAll, createCategoria, deleteById, getById, updateCategoria, getByCharac, getByCategoria } = require('../../models/categorias.models');
 
 const router = require('express').Router();
 
@@ -32,6 +32,11 @@ router.delete('/:categoriaId', async (req, res) => {
 router.put('/:categoriaId', async (req, res) => {
     const result = await updateCategoria(req.body)
     res.json(result)
+})
+
+router.get('/filter/:negocioId', async (req, res) => {
+    const categoriaConseguida = await getByCategoria(req.params.negocioId);
+    res.json(categoriaConseguida)
 })
 
 

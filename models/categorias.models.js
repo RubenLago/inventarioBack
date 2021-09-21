@@ -8,6 +8,13 @@ const getById = (categoriaId) => {
     return executeQueryUnique('select * from categorias where id = ? ', [categoriaId])
 }
 
+const getByCategoria = (negocioId) => {
+    return executeQuery('SELECT distinct(fk_categoria_id), cat.* from productos prod, categorias cat where fk_negocio_id =? and prod.fk_categoria_id = cat.id', [negocioId]
+    )
+}
+
+
+
 const createCategoria = ({ nombre, color }) => {
     return executeQuery('INSERT INTO categorias (nombre, color) values (?,?)', [nombre, color])
 }
@@ -28,4 +35,4 @@ const getByCharac = (filtroTexto) => {
 
 
 
-module.exports = { getAll, createCategoria, deleteById, getById, updateCategoria, getByCharac }
+module.exports = { getAll, createCategoria, deleteById, getById, updateCategoria, getByCharac, getByCategoria }
