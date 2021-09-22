@@ -29,9 +29,10 @@ const createCategoriaNegocio = (fk_negocio_id, fk_usuario_id) => {
         [fk_negocio_id, fk_usuario_id])
 }
 
-const getCatByCharac = (filtroTexto) => {
-    return executeQuery('SELECT prod.*, cat.nombre as nombre_categoria FROM productos prod, categorias cat WHERE prod.fk_negocio_id = ? AND prod.nombre like ? AND prod.fk_categoria_id = cat.id', [`%${filtroTexto}%`])
+const getCatByCharac = (negocioId, filtroTexto) => {
+    return executeQuery('SELECT prod.*, cat.nombre as nombre_categoria FROM productos prod, categorias cat WHERE prod.fk_negocio_id = ? AND cat.nombre like ? AND prod.fk_categoria_id = cat.id', [negocioId, `%${filtroTexto}%`])
     //filtrado '%palo%'
 }
+
 
 module.exports = { getAll, createCategoria, deleteById, getById, updateCategoria, getCatByCharac, createCategoriaNegocio, getByCategoria }

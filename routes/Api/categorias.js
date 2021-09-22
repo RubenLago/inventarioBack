@@ -8,9 +8,9 @@ router.get('/', async (req, res) => {
 })
 
 //filtrar categorias por caracteres
-router.get('/search/:filtro', async (req, res) => {
+router.get('/search/:id/:filtro', async (req, res) => {
     console.log(req.params)
-    const filtroCategorias = await getCatByCharac(req.params.filtro)
+    const filtroCategorias = await getCatByCharac(req.params.id, req.params.filtro)
     res.json(filtroCategorias)
 })
 
