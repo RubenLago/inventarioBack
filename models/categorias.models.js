@@ -9,36 +9,29 @@ const getById = (categoriaId) => {
 }
 
 const getByCategoria = (negocioId) => {
-    return executeQuery('SELECT distinct(fk_categoria_id) as id, cat.nombre, cat.color from categorias_negocios catneg, categorias cat where catneg.fk_negocio_id = ? and catneg.fk_categoria_id = cat.id', [negocioId]);
+    return executeQuery('SELECT distinct(fk_categoria_id) as id, cat.nombre from categorias_negocios catneg, categorias cat where catneg.fk_negocio_id = ? and catneg.fk_categoria_id = cat.id', [negocioId]);
 }
 
-
-
-const createCategoria = ({ nombre, color }) => {
-    return executeQuery('INSERT INTO categorias (nombre, color) values (?,?)', [nombre, color])
+const createCategoria = ({ nombre }) => {
+    return executeQuery('INSERT INTO categorias (nombre) VALUES (?)', [nombre])
 }
 
 const deleteById = (categoriaId) => {
     return executeQuery('delete from categorias where id = ? ', [categoriaId])
 }
 
-const updateCategoria = ({ id, nombre, color }) => {
-    return executeQuery(`UPDATE productos SET nombre="${nombre}", color="${color}" where id="${id}" ?`)
+const updateCategoria = ({ id, nombre }) => {
+    return executeQuery(`UPDATE productos SET nombre="${nombre}", where id="${id}" ?`)
 }
 
-//filtrar categorias por caracteres-nombre
-const filterByCharac = (filtroTexto) => {
-    return executeQuery('SELECT nombre FROM categorias WHERE nombre LIKE ?', [`%${filtroTexto}%`])
-    //filtrado '%vin%'
+const createCategoriaNegocio = (fk_negocio_id, fk_usuario_id) => {
+    return executeQuery('INSERT INTO usuario_restaurantes (fk_negocio_id, fk_usuario_id) VALUES(?,?)',
+        [fk_negocio_id, fk_usuario_id])
 }
 
-//recuperar categorias de un negocio
-const createCategoriaNegocio = (fk_negocio_id, fk_categoria_id) => {
-    return executeQuery('INSERT INTO categorias_negocios (fk_categoria_id, fk_negocio_id) VALUES(?,?)',
-        [fk_negocio_id, fk_categoria_id])
+const getCatByCharac = (filtroTexto) => {
+    return executeQuery('SELECT prod.*, cat.nombre as nombre_categoria FROM productos prod, categorias cat WHERE prod.fk_negocio_id = ? AND prod.nombre like ? AND prod.fk_categoria_id = cat.id', [`%${filtroTexto}%`])
+    //filtrado '%palo%'
 }
 
-
-
-
-module.exports = { getAll, createCategoria, deleteById, getById, updateCategoria, filterByCharac, getByCategoria, createCategoriaNegocio }
+module.exports = { getAll, createCategoria, deleteById, getById, updateCategoria, getCatByCharac, createCategoriaNegocio, getByCategoria }

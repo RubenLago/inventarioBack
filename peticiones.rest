@@ -103,7 +103,7 @@ POST  http://localhost:3000/categorias/create/21
 Content-Type: application/json
 
 {
-    "nombre": "Otra cosita"
+    "nombre": "NUEVA"
 }
 ###
 
