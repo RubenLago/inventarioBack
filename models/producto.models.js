@@ -18,7 +18,7 @@ const deleteById = (productoId) => {
 
 //crear producto nuevo
 const createProducto = ({ nombre, formato, cantidad, precioSin, iva, fk_negocio_id, fk_categoria_id }) => {
-    return executeQuery('INSERT INTO productos (nombre,formato,cantidad, precioSin, iva,fk_negocio_id, fk_categoria_id) VALUES (?,?,?,?,?,?,?)', [nombre, formato, cantidad, precioSin, iva, fk_negocio_id, fk_categoria_id])
+    return executeQuery('INSERT INTO productos (nombre,formato,cantidad, precioSin, iva,fk_negocio_id, fk_categoria_id, precioCon) VALUES (?,?,?,?,?,?,?,?)', [nombre, formato, cantidad, precioSin, iva, fk_negocio_id, fk_categoria_id, parseInt(precioSin) + (parseInt(precioSin) * (parseInt(iva) / 100))])
 }
 
 
@@ -34,7 +34,7 @@ const createProducto = ({ nombre, formato, cantidad, precioSin, iva, fk_negocio_
 WHERE id=8 */
 //con templateliteral para actualizar
 const updateProducto = ({ id, nombre, formato, cantidad, precioSin, iva }) => {
-    return executeQuery(`UPDATE productos SET nombre="${nombre}",formato="${formato}", cantidad="${cantidad}", precioSin="${precioSin}", iva="${iva}", precioCon="${(((iva) / 100)) * precioSin}" WHERE id=${id}`)
+    return executeQuery(`UPDATE productos SET nombre="${nombre}",formato="${formato}", cantidad="${cantidad}", precioSin="${precioSin}", iva="${iva}", precioCon="${parseInt(precioSin) + (parseInt(precioSin) * (parseInt)(iva) / 100)}" WHERE id=${id}`)
 }
 
 const getByNegocio = (negocioId) => {
